@@ -1,0 +1,40 @@
+plugin:
+    name: 'lareja.web::lang.plugin.name'
+    description: 'lareja.web::lang.plugin.description'
+    author: Lareja
+    icon: oc-icon-asterisk
+    homepage: ''
+permissions:
+    personManager:
+        tab: asdfasdf
+        label: 'Administrar Personas'
+    placeManager:
+        tab: a
+        label: 'Administrar Ámbitos'
+    reservationManager:
+        tab: b
+        label: 'Administrar Reservas'
+navigation:
+    backend:
+        label: Backend
+        url: lareja/web/people
+        icon: icon-film
+        sideMenu:
+            people:
+                label: Personas
+                url: lareja/web/people
+                icon: icon-users
+                permissions:
+                    - personManager
+            places:
+                label: Ámbitos
+                url: lareja/web/places
+                icon: icon-building
+                permissions:
+                    - placeManager
+            reservations:
+                label: Reservas
+                url: lareja/web/reservations
+                icon: icon-simplybuilt
+                permissions:
+                    - reservationManager

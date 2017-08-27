@@ -1,0 +1,10 @@
+name: Places
+form: $/lareja/web/models/place/fields.yaml
+modelClass: Lareja\Web\Models\Place
+defaultRedirect: lareja/web/places
+create:
+    redirect: 'lareja/web/places/update/:id'
+    redirectClose: lareja/web/places
+update:
+    redirect: lareja/web/places
+    redirectClose: lareja/web/places

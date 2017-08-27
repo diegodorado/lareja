@@ -1,0 +1,10 @@
+name: Reservations
+form: $/lareja/web/models/reservation/fields.yaml
+modelClass: Lareja\Web\Models\Reservation
+defaultRedirect: lareja/web/reservations
+create:
+    redirect: 'lareja/web/reservations/update/:id'
+    redirectClose: lareja/web/reservations
+update:
+    redirect: lareja/web/reservations
+    redirectClose: lareja/web/reservations

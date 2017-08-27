@@ -1,0 +1,11 @@
+list: $/lareja/web/models/reservation/columns.yaml
+modelClass: Lareja\Web\Models\Reservation
+title: Reservations
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'lareja/web/reservations/update/:id'

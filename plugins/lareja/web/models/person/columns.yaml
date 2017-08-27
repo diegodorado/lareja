@@ -1,0 +1,26 @@
+columns:
+    name:
+        label: Nombre
+        type: text
+        searchable: true
+        sortable: true
+    last_name:
+        label: Apellido
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: Teléfono
+        type: text
+        searchable: true
+        sortable: false
+    is_master:
+        label: 'Es Maestro?'
+        type: switch
+        searchable: true
+        sortable: false

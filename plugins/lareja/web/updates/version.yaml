@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table lareja_web_person'
+    - builder_table_create_lareja_web_person.php
+1.0.3:
+    - 'Updated table lareja_web_person'
+    - builder_table_update_lareja_web_person.php
+1.0.4:
+    - 'Updated table lareja_web_person'
+    - builder_table_update_lareja_web_person_2.php
+1.0.5:
+    - 'Updated table lareja_web_person'
+    - builder_table_update_lareja_web_person_3.php
+1.0.6:
+    - 'Created table lareja_web_reservation'
+    - builder_table_create_lareja_web_reservation.php
+1.0.7:
+    - 'Created table lareja_web_place'
+    - builder_table_create_lareja_web_place.php
+1.0.8:
+    - 'Updated table lareja_web_place'
+    - builder_table_update_lareja_web_place.php
+1.0.9:
+    - 'Created table lareja_web_reservation_host'
+    - builder_table_create_lareja_web_reservation_host.php

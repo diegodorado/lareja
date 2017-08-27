@@ -1,0 +1,11 @@
+list: $/lareja/web/models/place/columns.yaml
+modelClass: Lareja\Web\Models\Place
+title: Places
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'lareja/web/places/update/:id'

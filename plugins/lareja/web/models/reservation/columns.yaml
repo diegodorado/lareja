@@ -1,0 +1,4 @@
+columns:
+    place_id:
+        label: Ámbito
+        type: number

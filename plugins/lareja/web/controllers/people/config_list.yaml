@@ -1,0 +1,12 @@
+title: People
+modelClass: Lareja\Web\Models\Person
+list: $/lareja/web/models/person/columns.yaml
+recordUrl: 'lareja/web/people/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: 1
+showCheckboxes: 1
+showSorting: 1
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,0 +1,11 @@
+name: People
+modelClass: Lareja\Web\Models\Person
+form: $/lareja/web/models/person/fields.yaml
+defaultRedirect: lareja/web/people
+create:
+    redirect: 'lareja/web/people/update/:id'
+    redirectClose: lareja/web/people
+update:
+    redirect: lareja/web/people
+    redirectClose: lareja/web/people
+preview: {  }
