@@ -1,0 +1,11 @@
+columns:
+    ingreso:
+        label: Ingreso
+        type: datetime
+        searchable: true
+        sortable: true
+    egreso:
+        label: Egreso
+        type: datetime
+        searchable: true
+        sortable: true

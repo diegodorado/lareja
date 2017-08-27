@@ -1,0 +1,17 @@
+plugin:
+    name: 'lareja.reserva::lang.plugin.name'
+    description: 'lareja.reserva::lang.plugin.description'
+    author: Lareja
+    icon: oc-icon-bed
+    homepage: ''
+navigation:
+    main-menu-reservas:
+        label: 'lareja.reserva::lang.plugin.name'
+        url: lareja/reserva/reserva
+        icon: icon-bed
+        permissions:
+            - reservas-admin
+permissions:
+    reservas-admin:
+        tab: 'Administrar Reservas'
+        label: 'Administrar Reservas'

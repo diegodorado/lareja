@@ -1,0 +1,136 @@
+title            = "Main page"
+url              = "/"
+layout           = "main"
+description      = "Main page template"
+is_hidden        = 0
+meta_title       = "OctoberCMS Juicy Theme"
+meta_description = "Clean, simple and responsive landing page"
+==
+
+{# Navigation #}
+{% if this.theme.navigation_enable %}
+    <navigation
+        logo                = "{{ this.theme.navigation_logo | media }}"
+        :enabled-components = "[
+            {% if this.theme.portfolio_enable %}
+                {
+                    title: '{{ this.theme.portfolio_title }}',
+                    link:  '#portfolio'
+                },
+            {% endif %}
+            {% if this.theme.about_us_enable %}
+                {
+                    title: '{{ this.theme.about_us_title }}',
+                    link:  '#about-us'
+                },
+            {% endif %}
+            {% if this.theme.reviews_enable %}
+                {
+                    title: '{{ this.theme.reviews_title }}',
+                    link:  '#reviews'
+                },
+            {% endif %}
+            {% if this.theme.contacts_enable %}
+                {
+                    title: '{{ this.theme.contacts_title }}',
+                    link:  '#contacts'
+                },
+            {% endif %}
+        ]"
+    ></navigation>
+{% endif %}
+
+{# Promo #}
+{% if this.theme.promo_enable %}
+    <promo
+        title       = "{{ this.theme.promo_title }}"
+        subtitle    = "{{ this.theme.promo_subtitle }}"
+        button-text = "{{ this.theme.promo_button_text }}"
+        :images     = "[
+            {% for item in this.theme.promo_item %}
+                '{{ item.promo_image | media}}',
+            {% endfor %}
+        ]"
+    ></promo>
+{% endif %}
+
+{# Portfolio #}
+{% if this.theme.portfolio_enable %}
+    <portfolio
+        title       = "{{ this.theme.portfolio_title }}"
+        description = "{{ this.theme.portfolio_description }}"
+        color       = "{{ this.theme.portfolio_color}}"
+        :images     = "[
+            {% for item in this.theme.portfolio_item %}
+                '{{ item.image | media}}',
+            {% endfor %}
+        ]"
+    ></portfolio>
+{% endif %}
+
+{# About us #}
+{% if this.theme.about_us_enable %}
+    <about-us
+        title       = "{{ this.theme.about_us_title }}"
+        description = "{{ this.theme.about_us_description }}"
+        :items      = "[
+            {% for item in this.theme.about_us_item %}
+                {
+                    icon:  '{{ item.item_icon | media}}',
+                    title: '{{ item.item_title }}',
+                    text:  `{{ item.item_text | raw }}`
+                },
+            {% endfor %}
+        ]"
+    ></about-us>
+{% endif %}
+
+{# Reviews #}
+{% if this.theme.reviews_enable %}
+    <reviews
+        title  = "{{ this.theme.reviews_title }}"
+        color  = "{{ this.theme.reviews_color}}"
+        :items = "[
+            {% for item in this.theme.reviews_item %}
+                {
+                    avatar: '{{ item.avatar | media}}',
+                    name:   '{{ item.name }}',
+                    info:   '{{ item.info }}',
+                    text:   `{{ item.text | raw }}`
+                },
+            {% endfor %}
+        ]"
+    ></reviews>
+{% endif %}
+
+{# Contacts #}
+{% if this.theme.contacts_enable %}
+    <contacts
+        title                    = "{{ this.theme.contacts_title }}"
+        subtitle                 = "{{ this.theme.contacts_subtitle}}"
+        background-color         = "{{ this.theme.contacts_background_color }}"
+        content-background-color = "{{ this.theme.contacts_content_background_color }}"
+        :items = "[
+            {% for item in this.theme.contacts_item %}
+                {
+                    icon:  '{{ item.icon | media }}',
+                    title: '{{ item.title }}',
+                    text:  `{{ item.text }}`
+                },
+            {% endfor %}
+        ]"
+    ></contacts>
+{% endif %}
+
+{# Map widget #}
+{% if this.theme.map_widget_enable %}
+    {% partial 'map-widget/map-widget' %}
+{% endif %}
+
+{# Site footer #}
+{% if this.theme.site_footer_enable %}
+    <site-footer
+        company          = "{{ this.theme.site_footer_company }}"
+        background-color = "{{ this.theme.site_footer_background_color }}"
+    ></site-footer>
+{% endif %}
