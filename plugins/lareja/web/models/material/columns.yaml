@@ -9,7 +9,7 @@ columns:
         type: text
         searchable: true
         sortable: true
-        select: name
+        select: concat(name," ",last_name)
         relation: person
     name:
         label: Nombre

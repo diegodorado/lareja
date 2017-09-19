@@ -1,0 +1,35 @@
+<div class="layout-row">
+	<form method="POST" action="http://lareja.dev/backend/lareja/web/materials/update/1" accept-charset="UTF-8" class="layout">
+		<input name="_session_key" type="hidden" value="">
+		<input name="_token" type="hidden" value="">
+		<div class="layout-row">
+			<div data-control="formwidget" data-refresh-handler="form::onRefresh" class="form-widget form-elements layout" role="form" id="Form">
+				<div class="layout-row">
+					<div id="Form-outsideTabs" class="form-tabless-fields">
+						<div class="form-group  widget-field span-left is-required" data-field-name="person" id="Form-field-Material-person-group">
+							<label for="Form-field-Material-person">Autor</label>
+							<div class="relation-widget" id="Relation-formPerson-person">
+								<select id="Form-field-Material-person" name="Material[person]" class="form-control custom-select">
+									<option value="1">Santiago</option>
+									<option value="2">Santiago2</option>
+									<option value="3">Santiago3</option>
+									<option value="4">Santiago4</option>
+									<option value="5">Santiago5</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group  text-field span-right is-required" data-field-name="name" id="Form-field-Material-name-group">
+							<label for="Form-field-Material-name">Nombre</label>
+							<input type="text" name="Material[name]" id="Form-field-Material-name" value="Sobre la conformaci&oacute;n de un nuevo paisaje de formaci&oacute;n" placeholder="" class="form-control" autocomplete="off"maxlength="255"/>
+						</div>    
+						<div class="form-group  checkbox-field span-left" data-field-name="production" id="Form-field-Material-production-group">
+							<input type="hidden" name="Material[production]" value="0">
+							<input type="checkbox" id="Form-field-Material-production" name="Material[production]" value="1">
+							<label for="Form-field-Material-production">Es producci&oacute;n</label> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -21,3 +21,4 @@ columns:
         type: datetime
         searchable: true
         sortable: true
+        format: d/m/yy H:i

@@ -94,7 +94,7 @@ trait ViewMaker
                 return false;
             }
         }
-
+        
         return $this->makeFileContents($partialPath, $params);
     }
 
@@ -221,6 +221,7 @@ trait ViewMaker
      */
     public function makeFileContents($filePath, $extraParams = [])
     {
+		
         if (!strlen($filePath) || !File::isFile($filePath)) {
             return '';
         }

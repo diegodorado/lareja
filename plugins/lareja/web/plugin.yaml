@@ -35,12 +35,6 @@ navigation:
                 icon: icon-users
                 permissions:
                     - personManager
-            places:
-                label: Ámbitos
-                url: lareja/web/places
-                icon: icon-building
-                permissions:
-                    - placeManager
             reservations:
                 label: reservas
                 url: lareja/web/reservations
@@ -65,3 +59,9 @@ navigation:
                 icon: icon-tree
                 permissions:
                     - parkManager
+            places:
+                label: Ámbitos
+                url: lareja/web/places
+                icon: icon-building
+                permissions:
+                    - placeManager

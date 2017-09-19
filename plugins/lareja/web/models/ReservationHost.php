@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class ResevationHost extends Model
+class ReservationHost extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
