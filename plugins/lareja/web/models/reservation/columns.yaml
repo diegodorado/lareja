@@ -1,4 +1,11 @@
 columns:
-    place_id:
+    place:
         label: Ámbito
         type: number
+        select: name
+        relation: place
+    state:
+        label: Estado
+        type: text
+        select: name
+        relation: state

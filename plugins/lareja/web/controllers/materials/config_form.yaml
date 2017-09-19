@@ -1,0 +1,11 @@
+name: Materiales
+modelClass: Lareja\Web\Models\Material
+form: $/lareja/web/models/material/fields.yaml
+defaultRedirect: lareja/web/materials
+create:
+    redirect: 'lareja/web/materials/update/:id'
+    redirectClose: lareja/web/materials
+update:
+    redirect: lareja/web/materials
+    redirectClose: lareja/web/materials
+preview: {  }

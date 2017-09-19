@@ -1,0 +1,11 @@
+title: Activities
+modelClass: Lareja\Web\Models\Activity
+list: $/lareja/web/models/activity/columns.yaml
+recordUrl: 'lareja/web/activities/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

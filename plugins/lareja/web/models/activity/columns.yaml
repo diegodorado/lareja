@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: Id
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: Nombre
+        type: text
+        searchable: true
+        sortable: true
+    place:
+        label: Lugar
+        type: text
+        searchable: true
+        sortable: true
+        relation: place
+        select: name
+    date:
+        label: 'Fecha y hora'
+        type: datetime
+        searchable: true
+        sortable: true

@@ -1,0 +1,11 @@
+name: Activities
+modelClass: Lareja\Web\Models\Activity
+form: $/lareja/web/models/activity/fields.yaml
+defaultRedirect: lareja/web/activities
+create:
+    redirect: 'lareja/web/activities/update/:id'
+    redirectClose: lareja/web/activities
+update:
+    redirect: lareja/web/activities
+    redirectClose: lareja/web/activities
+preview: {  }

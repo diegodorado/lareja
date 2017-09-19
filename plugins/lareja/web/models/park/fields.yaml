@@ -1,0 +1,26 @@
+fields:
+    name:
+        label: Nombre
+        span: auto
+        required: 1
+        type: text
+    description:
+        label: Descripción
+        size: tiny
+        span: auto
+        required: 0
+        type: textarea
+    link:
+        label: Link
+        span: auto
+        required: 1
+        type: text
+    picture:
+        label: Imagen
+        span: auto
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

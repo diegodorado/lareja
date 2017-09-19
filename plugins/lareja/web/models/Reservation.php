@@ -25,7 +25,8 @@ class Reservation extends Model
     public $table = 'lareja_web_reservation';
 
     public $belongsTo = [
-        'place' => 'Lareja\Web\Models\Place'
+        'place' => 'Lareja\Web\Models\Place',
+		'state' => 'Lareja\Web\Models\State'
     ];
 
 }

@@ -6,14 +6,23 @@ plugin:
     homepage: ''
 permissions:
     personManager:
-        tab: asdfasdf
+        tab: 'Administrador de personas'
         label: 'Administrar Personas'
     placeManager:
-        tab: a
+        tab: 'Administrador de lugares'
         label: 'Administrar Ámbitos'
     reservationManager:
-        tab: b
+        tab: 'Administrador de reservas'
         label: 'Administrar Reservas'
+    materialManager:
+        tab: 'Administrador de materiales'
+        label: 'Administrar materiales'
+    activityManager:
+        tab: 'Administrador de actividades'
+        label: 'Administrar actividades'
+    parkManager:
+        tab: 'Administrador de parques'
+        label: 'Administrar parques'
 navigation:
     backend:
         label: Backend
@@ -33,8 +42,26 @@ navigation:
                 permissions:
                     - placeManager
             reservations:
-                label: Reservas
+                label: reservas
                 url: lareja/web/reservations
-                icon: icon-simplybuilt
+                icon: icon-bed
                 permissions:
                     - reservationManager
+            meterial:
+                label: Materiales
+                url: /lareja/web/materials
+                icon: icon-file-text-o
+                permissions:
+                    - materialsManager
+            activities:
+                label: Actividades
+                url: /lareja/web/activities
+                icon: icon-birthday-cake
+                permissions:
+                    - activityManager
+            parks:
+                label: Parques
+                url: /lareja/web/parks
+                icon: icon-tree
+                permissions:
+                    - parkManager

@@ -1,0 +1,11 @@
+name: Parks
+modelClass: Lareja\Web\Models\Park
+form: $/lareja/web/models/park/fields.yaml
+defaultRedirect: lareja/web/parks
+create:
+    redirect: 'lareja/web/parks/update/:id'
+    redirectClose: lareja/web/parks
+update:
+    redirect: lareja/web/parks
+    redirectClose: lareja/web/parks
+preview: {  }

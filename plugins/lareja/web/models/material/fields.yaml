@@ -1,0 +1,27 @@
+fields:
+    person:
+        label: Autor
+        nameFrom: name
+        span: auto
+        required: 1
+        descriptionFrom: last_name
+        type: relation
+    name:
+        label: Nombre
+        span: auto
+        required: 1
+        type: text
+    production:
+        label: 'Es producción'
+        span: auto
+        type: checkbox
+    file:
+        label: Archivo
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload
