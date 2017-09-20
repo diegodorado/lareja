@@ -26,7 +26,8 @@ class Reservation extends Model
 
     public $belongsTo = [
         'place' => 'Lareja\Web\Models\Place',
-		'state' => 'Lareja\Web\Models\State'
+		'state' => 'Lareja\Web\Models\State',
+		'responsible' => 'Lareja\Web\Models\Person'
     ];
 
 }

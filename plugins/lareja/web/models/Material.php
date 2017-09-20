@@ -38,8 +38,9 @@ class Material extends Model
 		$list = array();
 		$persons = Person::select('id','name','last_name','email')->get();
 		foreach($persons as $person){
+			$email = ' &nbsp;&nbsp;<span class="lighter">['.$person['attributes']['email'].']</span>';
 			$key = $person['attributes']['id'];
-			$label = $person['attributes']['name'] . " " . $person['attributes']['last_name'] . " &nbsp;&nbsp;[".$person['attributes']['email']."]";
+			$label = $person['attributes']['name'] . " " . $person['attributes']['last_name'] . $email;
 			$list[ $key ] = $label;
 		}
 		return $list;

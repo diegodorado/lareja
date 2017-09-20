@@ -1,4 +1,0 @@
-title: Reserva
-modelClass: Lareja\Reserva\Models\Reserva
-toolbar:
-    buttons: reorder_toolbar

@@ -1,11 +1,4 @@
 fields:
-    place:
-        label: Ámbito
-        oc.commentPosition: ''
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
     state:
         label: Estado
         span: auto

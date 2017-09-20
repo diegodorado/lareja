@@ -1,9 +1,20 @@
 columns:
-    place:
-        label: Ámbito
+    id:
+        label: Id
         type: number
-        select: name
-        relation: place
+        searchable: true
+        sortable: true
+    responsible:
+        label: 'Responsable'
+        type: text
+        relation: responsible
+        select: concat(name," ",last_name)
+    created_at:
+        label: 'Fecha de creación'
+        type: datetime
+        searchable: true
+        sortable: true
+        format: d/m/yy H:i
     state:
         label: Estado
         type: text

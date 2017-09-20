@@ -6,22 +6,22 @@ plugin:
     homepage: ''
 permissions:
     personManager:
-        tab: 'Administrador de personas'
+        tab: 'Administradores de la web'
         label: 'Administrar Personas'
     placeManager:
-        tab: 'Administrador de lugares'
+        tab: 'Administradores de la web'
         label: 'Administrar Ámbitos'
     reservationManager:
-        tab: 'Administrador de reservas'
+        tab: 'Administradores de la web'
         label: 'Administrar Reservas'
     materialManager:
-        tab: 'Administrador de materiales'
+        tab: 'Administradores de la web'
         label: 'Administrar materiales'
     activityManager:
-        tab: 'Administrador de actividades'
+        tab: 'Administradores de la web'
         label: 'Administrar actividades'
     parkManager:
-        tab: 'Administrador de parques'
+        tab: 'Administradores de la web'
         label: 'Administrar parques'
 navigation:
     backend:

@@ -1,35 +1,89 @@
-<div class="layout-row">
-	<form method="POST" action="http://lareja.dev/backend/lareja/web/materials/update/1" accept-charset="UTF-8" class="layout">
-		<input name="_session_key" type="hidden" value="">
-		<input name="_token" type="hidden" value="">
-		<div class="layout-row">
-			<div data-control="formwidget" data-refresh-handler="form::onRefresh" class="form-widget form-elements layout" role="form" id="Form">
-				<div class="layout-row">
-					<div id="Form-outsideTabs" class="form-tabless-fields">
-						<div class="form-group  widget-field span-left is-required" data-field-name="person" id="Form-field-Material-person-group">
-							<label for="Form-field-Material-person">Autor</label>
-							<div class="relation-widget" id="Relation-formPerson-person">
-								<select id="Form-field-Material-person" name="Material[person]" class="form-control custom-select">
-									<option value="1">Santiago</option>
-									<option value="2">Santiago2</option>
-									<option value="3">Santiago3</option>
-									<option value="4">Santiago4</option>
-									<option value="5">Santiago5</option>
-								</select>
+	<!--
+	<div class="layout-row min-size">			
+		<div id="Form-primaryTabs" class="control-tabs primary-tabs layout" data-control="tab" data-slidable>
+			<div class="">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#primarytab-1">Reserva</a></li>
+					<li class=""><a href="#primarytab-2">Alojados</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	-->
+	<div class="layout-row">
+		<div data-control="formwidget" data-refresh-handler="form::onRefresh" class="form-widget form-elements layout" role="form" id="Form">
+			<div class="layout-row">
+				<div id="Form-outsideTabs" class="form-tabless-fields">
+					<div class="form-group  widget-field span-left is-required" data-field-name="person" id="Form-field-Material-person-group">
+						<label for="Form-field-Material-person">Responsable</label>
+						<div class="relation-widget" id="Relation-formPerson-person">
+							<div>
+								<span><?php echo $responsible_name." ".$responsible_last_name; ?></span>
 							</div>
 						</div>
-						<div class="form-group  text-field span-right is-required" data-field-name="name" id="Form-field-Material-name-group">
-							<label for="Form-field-Material-name">Nombre</label>
-							<input type="text" name="Material[name]" id="Form-field-Material-name" value="Sobre la conformaci&oacute;n de un nuevo paisaje de formaci&oacute;n" placeholder="" class="form-control" autocomplete="off"maxlength="255"/>
-						</div>    
-						<div class="form-group  checkbox-field span-left" data-field-name="production" id="Form-field-Material-production-group">
-							<input type="hidden" name="Material[production]" value="0">
-							<input type="checkbox" id="Form-field-Material-production" name="Material[production]" value="1">
-							<label for="Form-field-Material-production">Es producci&oacute;n</label> 
+					</div>
+					<div class="form-group  text-field span-right is-required" data-field-name="name" id="Form-field-Material-name-group">
+						<label for="Form-field-Material-name">Estado</label>
+						<select id="Form-field-Material-person" class="form-control custom-select">
+							<?php foreach ($states as $state) { ?>
+							<option <?php if ($state['id'] == $state_id) echo 'selected="selected" '; ?>value="<?php echo $state['id']?>"><?php echo $state['name']?></option>
+							<?php } ?>
+						</select>
+					</div>    
+					<div class="form-group  text-field span-left is-required" data-field-name="name" id="Form-field-Material-name-group">
+						<label for="Form-field-Material-name">Fecha de creacion</label>
+						<div>
+							<span><?php echo $created_at; ?></span>
 						</div>
+					</div>    
+					<div class="form-group  text-field span-right is-required" data-field-name="name" id="Form-field-Material-name-group">
+						<label for="Form-field-Material-name">Monto pagado</label>
+						<input type="text" name="Material[name]" id="Form-field-Material-name" value="<?php echo $paid_amount; ?>" placeholder="" class="form-control" autocomplete="off"maxlength="255"/>
+					</div>    
+					<div class="form-group  text-field span-left is-required" data-field-name="name" id="Form-field-Material-name-group">
+						<label for="Form-field-Material-name">Monto total</label>
+						<div>
+							<span><?php echo $total_amount; ?></span>
+						</div>
+					</div>    
+					<div class="form-group  checkbox-field span-right" data-field-name="production" id="Form-field-Material-production-group">
+						<input type="hidden" name="Material[production]" value="0">
+						<input type="checkbox" id="Form-field-Material-production" name="Material[production]" value="<?php echo $is_keeper; ?>"<?php if ($is_keeper) echo ' checked="checked"'; ?>>
+						<label for="Form-field-Material-production">Cuidadores</label> 
 					</div>
 				</div>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+	
+
+	<h3>Alojados</h3>
+	<div class="hosts table" style="display:table">
+		<?php foreach($hosts as $host) { ?>
+		<div class="host" style="display:table-row">
+			<div class="host-name" style="display:table-cell">
+				<label><?php echo $host['name'].' '.$host['last_name']; ?></label>
+			</div>
+			<div class="host-date-in" style="display:table-cell">
+				<label><?php echo $host['from']; ?></label>
+			</div>
+			<div class="host-date-out" style="display:table-cell">
+				<label><?php echo $host['to']; ?></label>
+			</div>
+			<div class="host-amount" style="display:table-cell">
+				<label>200</label>
+			</div>
+			<div class="host-place" style="display:table-cell; width:200px;">
+				<select  class="" >
+					<?php foreach($places as $place) { ?>
+					<option <?php if ($place['id'] == $host['place_id']) echo 'selected="selected" '; ?>value="<?php echo $place['id']?>"><?php echo $place['name']?></option>
+					<? } ?>
+				</select>
+			</div>
+			<div class="host-checkbox" style="display:table-cell">
+				<input type="checkbox" checked>
+			</div>
+		</div>
+		<?php } ?>
+	</div>
+						
