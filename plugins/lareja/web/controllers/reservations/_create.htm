@@ -1,0 +1,101 @@
+	<!--
+	<div class="layout-row min-size">			
+		<div id="Form-primaryTabs" class="control-tabs primary-tabs layout" data-control="tab" data-slidable>
+			<div class="">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#primarytab-1">Reserva</a></li>
+					<li class=""><a href="#primarytab-2">Alojados</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	-->
+	<div class="layout-row">
+		<div data-control="formwidget" data-refresh-handler="form::onRefresh" class="form-widget form-elements layout" role="form" id="Form">
+			<div class="layout-row">
+				<div id="Form-outsideTabs" class="form-tabless-fields">
+					<div class="form-group  widget-field span-left">
+						<label>Responsable</label>
+						<div class="person-select">
+							<select id="person-select" name="data[person_id]" class="form-control custom-select">
+								<option value=0></option>
+								<?php foreach ($persons as $person) { ?>
+								<option value="<?php echo $person['id']?>"><?php echo $person['name'] . " " . $person['last_name'] . "&nbsp;&nbsp;&nbsp;[" . $person['email'] . "]";?></option>
+								<?php } ?>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="hosts-area">
+		<div class="title-bar">
+			<div class="block">
+				<h3>Alojados</h3>
+			</div>
+			<div class="block">
+				<div class="add-button" title="Nuevo alojado">
+					<img src="/plugins/lareja/web/assets/img/add.png" >
+				</div>
+			</div>
+		</div>
+		<div class="hosts table" style="display:table">
+			<div class="header" style="display:table-row">
+				<div class="host-field">
+					<label>Persona</label>
+				</div>
+				<div class="host-field">
+					<label>Ingreso</label>
+				</div>
+				<div class="host-field">
+					<label>Egreso</label>
+				</div>
+				<div class="host-field">
+					<label>Ámbito</label>
+				</div>
+				<div class="host-field">
+					<label>Reserva taller</label>
+				</div>
+			</div>
+			<div class="host" style="display:table-row">
+				<div class="host-field host-name">
+					<label></label>
+				</div>
+				<div class="host-field host-date-in">
+					<div class="field-datepicker" data-control="datepicker">
+						<div class="input-with-icon right-align">
+							<i class="icon icon-calendar-o"></i>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker />
+						</div>
+					</div>
+                </div>
+				<div class="host-field host-date-out">
+					<div class="field-datepicker" data-control="datepicker">
+						<div class="input-with-icon right-align">
+							<i class="icon icon-calendar-o"></i>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker />
+						</div>
+					</div>
+				</div>
+				<div class="host-field host-place">
+					<select  class="form-control custom-select" width="25%">
+						<?php foreach($places as $place) { ?>
+						<option value="<?php echo $place['id']?>"><?php echo $place['name']?></option>
+						<? } ?>
+					</select>
+				</div>
+				<div class="host-field host-workshop">
+					<div class="block">
+						<input type="hidden" value="0" >
+						<label class="custom-switch" >
+						<input type="checkbox" value="1" >
+						<span><span>On</span><span>Off</span></span>
+						<a class="slide-button"></a>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+						

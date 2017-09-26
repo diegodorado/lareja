@@ -1,0 +1,5 @@
+1. Personalizar lo que muestra un campo relacionado en el listado
+2. Personalizar lo que muestra un select en realacionado en el formulario
+3. Subida de archivos
+4. Controllers 100% personalizados
+

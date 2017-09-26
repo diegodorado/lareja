@@ -1,0 +1,12 @@
+root_path=/var/www/lareja.dev
+alias ea='vim $root_path/.alias'
+alias sa='cat $root_path/.alias'
+alias proot='cd $root_path'
+alias plugin='cd $root_path/plugins/lareja/web'
+alias controllers='cd $root_path/plugins/lareja/web/controllers'
+alias models='cd $root_path/plugins/lareja/web/models'
+alias assets='cd $root_path/plugins/lareja/web/assets'
+unload_lr(){
+	unalias ea sa proot plugin controllers models assets
+	unset root_path	
+}

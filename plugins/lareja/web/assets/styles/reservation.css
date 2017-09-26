@@ -1,0 +1,30 @@
+.hosts-area .host-field{
+	display: table-cell;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+.hosts-area .host-name{ width: 42%; }
+.hosts-area .host-date-in,.hosts-area .host-date-out{ width: 16%; }
+.hosts-area .host-place{ width: 16%; }
+.hosts-area .host-workshop{ width: 10%; }
+.block{
+	display: inline-block;
+}
+.hosts-area .add-button{
+	cursor: pointer;
+	padding: 0px 10px 0px 10px;
+}
+.hosts-area .add-button img{
+	width: 32px;
+}
+.hosts-area .title-bar{
+	display: table-row;
+}
+.hosts-area .title-bar .block{
+	display: table-cell;
+	vertical-align: middle;
+}
+.hosts.table .header label{
+	font-weight: bold;
+}
