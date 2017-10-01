@@ -37,6 +37,7 @@ class Reservations extends Controller
 		
 		$this->getCreationFormData();
 		return $this->asExtension('FormController')->create($context);
+
 	}
 
 	public function create_onSave(){
