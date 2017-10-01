@@ -2939,7 +2939,7 @@ return result?result:items}
 $.fn.datePicker.Constructor=DatePicker
 $.fn.datePicker.noConflict=function(){$.fn.datePicker=old
 return this}
-$(document).on('render',function(){$('[data-control="datepicker"]').datePicker({format:'DD/MM/Y'})});}(window.jQuery);(function($){$(document).render(function(){$('[data-control="tooltip"], [data-toggle="tooltip"]').tooltip()})})(jQuery);+function($){"use strict";var Base=$.oc.foundation.base,BaseProto=Base.prototype
+$(document).on('render',function(){$('[data-control="datepicker"]').datePicker({format:'DD-MM-Y'})});}(window.jQuery);(function($){$(document).render(function(){$('[data-control="tooltip"], [data-toggle="tooltip"]').tooltip()})})(jQuery);+function($){"use strict";var Base=$.oc.foundation.base,BaseProto=Base.prototype
 var Toolbar=function(element,options){var
 $el=this.$el=$(element),$toolbar=$el.closest('.control-toolbar')
 $.oc.foundation.controlUtils.markDisposable(element)

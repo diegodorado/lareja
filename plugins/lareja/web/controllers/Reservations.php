@@ -4,6 +4,7 @@ use Flash;
 use DateTime;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Lareja\Web\Constants;
 use Lareja\Web\Models\Person;
 use Lareja\Web\Models\State;
 use Lareja\Web\Models\Place;
@@ -40,6 +41,43 @@ class Reservations extends Controller
 
 	public function create_onSave(){
 
+		$data = post("data");
+		$data['hosts'][0]['person_id'] = $data['person_id'];
+
+		$workshop_count = 0;
+		for($i=0;$i<count($data['hosts']);$i++){
+			if ($data['hosts'][$i]['workshop']){
+				$workshop_count += 1;
+			}
+			unset($data['hosts'][$i]['workshop']);
+		}
+
+		$reservation = array(
+			'total_amount' 		=> count($data["hosts"]) * Constants::RESERVATION_NIGHT_PRICE,
+			'workshop_people' 	=> 0,
+			'state_id' 			=> Constants::RESERVATION_APPROVED,
+			'responsible_id' 	=> $data["person_id"],
+			'created_at' 		=> date('Y-m-d H:i:s'),
+			'updated_at' 		=> date('Y-m-d H:i:s')
+		);
+
+		$id = Reservation::insertGetId($reservation);
+
+		for($i=0;$i<count($data['hosts']);$i++){
+			$data['hosts'][$i]['reservation_id'] = $id;
+			$from_parts = explode('-',$data['hosts'][$i]['from']);
+			$data['hosts'][$i]['from'] = $from_parts[2] . $from_parts[1] .$from_parts[0];
+			$to_parts = explode('-',$data['hosts'][$i]['to']);
+			$data['hosts'][$i]['to'] = $to_parts[2] . $to_parts[1] .$to_parts[0];
+		}
+
+		ReservationHost::insert($data['hosts']);		
+
+		Flash::success("Se guardó todo y no hubo ningún error");
+
+        if ($redirect = $this->makeRedirect('create', $model)) {
+            return $redirect;
+        }
 	}
 	   	
     public function update($recordId, $context = null)

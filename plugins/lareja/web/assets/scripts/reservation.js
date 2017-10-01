@@ -11,7 +11,7 @@ $(document).ready(function(){
 		new_host();	
 	});
 	$('[data-control="datepicker"]').datePicker({ format: 'D/MM/Y' });
-	
+	name_fields();
 });
 
 function new_host(){
@@ -54,10 +54,10 @@ function init_datePickers(){
 function name_fields(){
 	$counter = 0;
 	$('.hosts.table .host').each(function(){		
-		$(this).find('.host-name select').attr('name','data[hosts]['+$counter+'][id]');
-		$(this).find('.host-date-in input').attr('name','data[hosts]['+$counter+'][date-in]');
-		$(this).find('.host-date-out input').attr('name','data[hosts]['+$counter+'][date-out]');
-		$(this).find('.host-place select').attr('name','data[hosts]['+$counter+'][place]');
+		$(this).find('.host-name select').attr('name','data[hosts]['+$counter+'][person_id]');
+		$(this).find('.host-date-in input').attr('name','data[hosts]['+$counter+'][from]');
+		$(this).find('.host-date-out input').attr('name','data[hosts]['+$counter+'][to]');
+		$(this).find('.host-place select').attr('name','data[hosts]['+$counter+'][place_id]');
 		$(this).find('.host-workshop input').attr('name','data[hosts]['+$counter+'][workshop]');
 		$counter++;
 	});

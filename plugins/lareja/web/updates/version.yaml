@@ -111,3 +111,9 @@
 1.0.38:
     - 'Updated table lareja_web_reservation_host'
     - builder_table_update_lareja_web_reservation_host_4.php
+1.0.39:
+    - 'Updated table lareja_web_reservation'
+    - builder_table_update_lareja_web_reservation_11.php
+1.0.40:
+    - 'Updated table lareja_web_reservation'
+    - builder_table_update_lareja_web_reservation_12.php
