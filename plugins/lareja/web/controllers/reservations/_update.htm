@@ -28,7 +28,7 @@
 					</div>
 					<div class="form-group  text-field span-right">
 						<label>Estado</label>
-						<select name="data[state_id]" class="form-control custom-select">
+						<select name="data[reservation][state_id]" class="form-control custom-select">
 							<?php foreach ($states as $state) { ?>
 							<option <?php if ($state['id'] == $state_id) echo 'selected="selected" '; ?>value="<?php echo $state['id']?>"><?php echo $state['name']?></option>
 							<?php } ?>
@@ -43,7 +43,7 @@
 					<?php if (!$is_keeper) { ?>
 					<div class="form-group  text-field span-right">
 						<label>Monto pagado</label>
-						<input type="text" name="data[paid_amount]" value="<?php echo $paid_amount; ?>" class="form-control">
+						<input type="text" name="data[reservation][paid_amount]" value="<?php echo $paid_amount; ?>" class="form-control">
 					</div>    
 					<div class="form-group  text-field span-left">
 						<label>Monto total</label>
@@ -57,34 +57,45 @@
 		</div>
 	</div>
 	
+	<div class="hosts-area update">
+		<h3>Alojados</h3>
+		<div class="hosts table" style="display:table">
+			<?php foreach($hosts as $host) { ?>
+			<div class="host <?php if ($host['enabled']) echo "enabled"; else echo "disabled" ?>">
 
-	<h3>Alojados</h3>
-	<div class="hosts table" style="display:table">
-		<?php foreach($hosts as $host) { ?>
-		<div class="host" style="display:table-row">
-			<div class="host-name" style="display:table-cell">
-				<label><?php echo $host['name'].' '.$host['last_name']; ?></label>
+				<div class="host-field host-name">
+					<label><?php echo $host['name'].' '.$host['last_name']; ?></label>
+					<input type="hidden" value="<?php echo $host['person_id']; ?>">
+				</div>
+				<div class="host-field host-date-in">
+					<div class="field-datepicker" data-control="datepicker">
+						<div class="input-with-icon right-align">
+							<i class="icon icon-calendar-o"></i>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker value="<?php echo $host['from']; ?>"/>
+						</div>
+					</div>
+				</div>
+				<div class="host-field host-date-out">
+					<div class="field-datepicker" data-control="datepicker">
+						<div class="input-with-icon right-align">
+							<i class="icon icon-calendar-o"></i>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker value="<?php echo $host['to']; ?>"/>
+						</div>
+					</div>
+				</div>
+				<div class="host-field host-place">
+					<select  class="form-control custom-select" width="25%">
+						<?php foreach($places as $place) { ?>
+						<option <?php if ($place['id'] == $host['place_id']) echo 'selected="selected" '; ?>value="<?php echo $place['id']?>"><?php echo $place['name']?></option>
+						<? } ?>
+					</select>
+				</div>
+				<div class="host-field host-enabled" style="display:table-cell">
+					<input type="checkbox" <?php if ($host['enabled']) echo "checked"; ?>>
+				</div>
+
 			</div>
-			<div class="host-date-in" style="display:table-cell">
-				<label><?php echo $host['from']; ?></label>
-			</div>
-			<div class="host-date-out" style="display:table-cell">
-				<label><?php echo $host['to']; ?></label>
-			</div>
-			<div class="host-amount" style="display:table-cell">
-				<label>200</label>
-			</div>
-			<div class="host-place" style="display:table-cell; width:200px;">
-				<select  class="" >
-					<?php foreach($places as $place) { ?>
-					<option <?php if ($place['id'] == $host['place_id']) echo 'selected="selected" '; ?>value="<?php echo $place['id']?>"><?php echo $place['name']?></option>
-					<? } ?>
-				</select>
-			</div>
-			<div class="host-checkbox" style="display:table-cell">
-				<input type="checkbox" checked>
-			</div>
+			<?php } ?>
 		</div>
-		<?php } ?>
 	</div>
 						

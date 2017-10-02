@@ -23,6 +23,9 @@ permissions:
     parkManager:
         tab: 'Administradores de la web'
         label: 'Administrar parques'
+    keeperManager:
+        tab: 'Administradores de la web'
+        label: 'Administrar cuidadores'
 navigation:
     backend:
         label: Backend
@@ -41,7 +44,11 @@ navigation:
                 icon: icon-bed
                 permissions:
                     - reservationManager
-            meterial:
+            keeper:
+                label: Cuidadores
+                url: lareja/web/keepers
+                icon: icon-key
+            material:
                 label: Materiales
                 url: /lareja/web/materials
                 icon: icon-file-text-o

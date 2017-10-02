@@ -4,10 +4,20 @@
 	text-align: center;
 	vertical-align: middle;
 }
-.hosts-area .host-name{ width: 42%; }
-.hosts-area .host-date-in,.hosts-area .host-date-out{ width: 16%; }
-.hosts-area .host-place{ width: 16%; }
-.hosts-area .host-workshop{ width: 10%; }
+.hosts-area.create .host{
+	display: table-row;
+}
+.hosts-area.create .host-name{ width: 42%; }
+.hosts-area.create .host-date-in,.hosts-area .host-date-out{ width: 16%; }
+.hosts-area.create .host-place{ width: 16%; }
+.hosts-area.create .host-workshop{ width: 10%; }
+.hosts-area.update .host-name{ width: 22%; }
+.hosts-area.update .host-date-in,.hosts-area .host-date-out{ width: 22%; }
+.hosts-area.update .host-place{ width: 22%; }
+.hosts-area.update .host-workshop{ width: 22%; }
+.host-name label{
+	font-size: 14px;
+}
 .block{
 	display: inline-block;
 }
@@ -27,4 +37,10 @@
 }
 .hosts.table .header label{
 	font-weight: bold;
+}
+.hosts-area.update .host-name{
+	text-align: left;
+}
+.host.disabled label{
+	color: #aaa;
 }

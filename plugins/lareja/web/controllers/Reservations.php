@@ -44,6 +44,7 @@ class Reservations extends Controller
 
 		$data = post("data");
 		$data['hosts'][0]['person_id'] = $data['person_id'];
+		
 
 		$workshop_count = 0;
 		for($i=0;$i<count($data['hosts']);$i++){
@@ -72,7 +73,7 @@ class Reservations extends Controller
 			$data['hosts'][$i]['to'] = $to_parts[2] . $to_parts[1] .$to_parts[0];
 		}
 
-		ReservationHost::insert($data['hosts']);		
+		ReservationHost::insert($data['hosts']);
 
 		Flash::success("Se guardó todo y no hubo ningún error");
 
@@ -94,18 +95,33 @@ class Reservations extends Controller
     public function update_onSave($recordId, $context = null)
 	{
         $model = $this->formFindModelObject($recordId);
+
+		$data = post('data');
         
 		Reservation::where('id','=',$recordId)
-					->update(post('data'));
-		
+					->update($data['reservation']);
+
+		ReservationHost::where('reservation_id','=',$recordId)->delete();
+
+		for( $i=0; $i<count($data['hosts']); $i++ ){
+			$data['hosts'][$i]['reservation_id'] = $recordId;
+			if (isset($data['hosts'][$i]['enabled'])){
+				$data['hosts'][$i]['enabled'] = 1;
+			}
+			else{
+				$data['hosts'][$i]['enabled'] = 0;
+			}
+		}
+
+		ReservationHost::insert($data['hosts']);
+
 		Flash::success("Reserva actualizada con éxito");
 
         if ($redirect = $this->makeRedirect('update', $model)) {
             return $redirect;
         }
-		
-
 	}
+
 	public function remap(){}
 
 	public function getReservationFormData(){
@@ -126,7 +142,7 @@ class Reservations extends Controller
 			->where('lareja_web_reservation.id','=',$this->recordId)
 			->first();
 			
-		$reservation_hosts = ReservationHost::select('from','to','place_id','enabled',
+		$reservation_hosts = ReservationHost::select('person_id','from','to','place_id','enabled',
 			'lareja_web_person.name',
 			'lareja_web_person.last_name')
 			->join('lareja_web_person','lareja_web_reservation_host.person_id','=','lareja_web_person.id')
@@ -150,6 +166,10 @@ class Reservations extends Controller
 		}
 		
 		foreach($reservation_hosts as $host){
+			$from_parts = explode('-',$host->attributes['from']);
+			$host->attributes['from'] = $from_parts[2] .'-'. $from_parts[1] .'-'.$from_parts[0];
+			$to_parts = explode('-',$host->attributes['to']);
+			$host->attributes['to'] = $to_parts[2] .'-'. $to_parts[1] .'-'.$to_parts[0];
 			$this->data['hosts'][] = $host->attributes;
 		}
 		

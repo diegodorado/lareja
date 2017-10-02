@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.person-select span').focus();
-	$('.hosts-area').hide();
+	$('.hosts-area.create').hide();
 	$('#person-select').change(function(){
 		$('.hosts-area').show();
 		$person = $('#person-select option:selected').html();
@@ -11,6 +11,9 @@ $(document).ready(function(){
 		new_host();	
 	});
 	$('[data-control="datepicker"]').datePicker({ format: 'D/MM/Y' });
+	$('.host-enabled input').change(function(){
+		toggle_enabled($(this).parent().parent());
+	});
 	name_fields();
 });
 
@@ -55,10 +58,20 @@ function name_fields(){
 	$counter = 0;
 	$('.hosts.table .host').each(function(){		
 		$(this).find('.host-name select').attr('name','data[hosts]['+$counter+'][person_id]');
+		$(this).find('.host-name input').attr('name','data[hosts]['+$counter+'][person_id]');
 		$(this).find('.host-date-in input').attr('name','data[hosts]['+$counter+'][from]');
 		$(this).find('.host-date-out input').attr('name','data[hosts]['+$counter+'][to]');
 		$(this).find('.host-place select').attr('name','data[hosts]['+$counter+'][place_id]');
 		$(this).find('.host-workshop input').attr('name','data[hosts]['+$counter+'][workshop]');
+		$(this).find('.host-enabled input').attr('name','data[hosts]['+$counter+'][enabled]');
 		$counter++;
 	});
+}
+function toggle_enabled( $host ){
+	if ($host.find('.host-enabled input:checked').length > 0 ){
+		$host.removeClass('disabled').addClass('enabled');
+	}
+	else{
+		$host.removeClass('enabled').addClass('disabled');
+	}
 }
