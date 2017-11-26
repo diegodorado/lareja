@@ -1,5 +1,5 @@
 	<!--
-	<div class="layout-row min-size">			
+	<div class="layout-row min-size">
 		<div id="Form-primaryTabs" class="control-tabs primary-tabs layout" data-control="tab" data-slidable>
 			<div class="">
 				<ul class="nav nav-tabs">
@@ -15,7 +15,7 @@
 			<div class="layout-row">
 				<div id="Form-outsideTabs" class="form-tabless-fields">
 					<div class="form-group  widget-field span-left">
-						<?php if ($is_keeper) { ?>
+						<?php if (/*$is_keeper*/true) { ?>
 						<h4>Reserva para cuidadores</h4>
 						<?php } else { ?>
 						<label>Responsable</label>
@@ -33,30 +33,30 @@
 							<option <?php if ($state['id'] == $state_id) echo 'selected="selected" '; ?>value="<?php echo $state['id']?>"><?php echo $state['name']?></option>
 							<?php } ?>
 						</select>
-					</div>    
+					</div>
 					<div class="form-group  text-field span-left">
 						<label>Fecha en que se hizo la reserva</label>
 						<div>
 							<span><?php echo $created_at; ?></span>
 						</div>
-					</div>    
-					<?php if (!$is_keeper) { ?>
+					</div>
+					<?php if (/*!$is_keeper*/true) { ?>
 					<div class="form-group  text-field span-right">
 						<label>Monto pagado</label>
 						<input type="text" name="data[reservation][paid_amount]" value="<?php echo $paid_amount; ?>" class="form-control">
-					</div>    
+					</div>
 					<div class="form-group  text-field span-left">
 						<label>Monto total</label>
 						<div>
 							<span><?php echo $total_amount; ?></span>
 						</div>
-					</div>    
+					</div>
 					<?php } ?>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="hosts-area update">
 		<h3>Alojados</h3>
 		<div class="hosts table" style="display:table">
@@ -87,7 +87,7 @@
 					<select  class="form-control custom-select" width="25%">
 						<?php foreach($places as $place) { ?>
 						<option <?php if ($place['id'] == $host['place_id']) echo 'selected="selected" '; ?>value="<?php echo $place['id']?>"><?php echo $place['name']?></option>
-						<? } ?>
+						<?php } ?>
 					</select>
 				</div>
 				<div class="host-field host-enabled" style="display:table-cell">
@@ -98,4 +98,3 @@
 			<?php } ?>
 		</div>
 	</div>
-						

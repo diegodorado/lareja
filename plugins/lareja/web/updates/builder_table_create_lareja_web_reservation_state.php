@@ -10,11 +10,11 @@ class BuilderTableCreateLarejaWebReservationState extends Migration
         Schema::create('lareja_web_reservation_state', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->increments('id')->nullable()->unsigned();
+            $table->increments('id')->unsigned();
             $table->string('name', 255);
         });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('lareja_web_reservation_state');
