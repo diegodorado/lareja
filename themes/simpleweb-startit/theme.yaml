@@ -1,0 +1,7 @@
+name: Startit
+description: A clean corporate design. Based on Bootstrap 3.3.7.
+author: SimpleWeb
+homepage: 'https://simplewebdesign.at'
+code: Startit
+require:
+    - RainLab.Blog

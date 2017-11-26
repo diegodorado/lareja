@@ -1,0 +1,104 @@
+title = "Contact"
+url = "/contact"
+layout = "default-layout"
+description = "This is the template for a contact page."
+is_hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+function onSend()
+{
+    // Collect input
+    $contact_name = post('contactname');
+    $contact_email = post('contactemail');
+    $contact_message = post('contactmessage');
+
+    // Form Validation
+    $validator = Validator::make(
+        [
+            'contactname' => $contactname,
+            'contactemail' => $contact_email,
+            'contactmessage' => $contact_message,
+        ],
+        [
+            'contactname' => 'required',
+            'contactemail' => 'required|email',
+            'contactsubject' => 'required',
+            'contactmessage' => 'required',
+        ]
+    );
+
+    if ($validator->fails())
+    {
+        $messages = $validator->messages();
+        throw new ApplicationException($messages->first());
+    }
+
+    // All is well -- Submit form
+    $to = System\Models\MailSettings::get('sender_email');
+    $params = compact('contact_name', 'contact_email','contact_message');
+    Mail::sendTo($to, 'startit.website::mail.contactform', $params);
+    return true;
+}
+?>
+==
+<section class="banner page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center">Contact us: <br /><small>Get in touch with us.</small></h2>
+        </div>
+      </div>
+    </div><!-- /.container -->
+</section><!-- /.banner -->
+
+<section id="contact-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <form id="contactForm" class="contact helper-margin-top-25" role="form" data-request="onSend" data-request-success="alert('Wir haben Ihre Nachricht erhalten. Wir melden uns bei Ihnen!')"">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="contactname" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="contactemail" placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" name="contactmessage" placeholder="Your message"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="reset" class="btn btn-danger">Reset form</button>
+                    <button type="submit" class="btn btn-default">Submit form</button>
+                </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contact details:</h3>
+                </div>
+                <div class="panel-body">
+                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <p><i class="fa fa-phone"></i>
+                    <abbr title="Phone">P</abbr>: (123) 456-7890</p>
+                    <p><i class="fa fa-envelope-o"></i>
+                    <abbr title="Email">E</abbr>: <a href="mailto:name@example.com">name@example.com</a>
+                    </p>
+                    <p><i class="fa fa-clock-o"></i>
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+                    <ul class="list-unstyled list-inline list-social-icons">
+                        <li><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26435.62199733516!2d-118.3294409!3d34.0835403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8d3b1e0287d%3A0x9cc32be17df028b8!2sMelrose+Ave%2C+Los+Angeles%2C+CA%2C+USA!5e0!3m2!1sde!2sat!4v1442041219159" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>

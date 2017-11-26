@@ -504,6 +504,7 @@ class Form extends WidgetBase
             $widget = $this->makeFormFieldWidget($field);
             $widget->bindToController();
         }
+
         $this->fieldsDefined = true;
     }
 

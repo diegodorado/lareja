@@ -1,0 +1,41 @@
+title = "Blog Category"
+url = "/blog/category/:slug/:page?"
+layout = "default-layout"
+description = "Viewing blog posts in a specific category."
+is_hidden = "0"
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = "10"
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "0"
+categoryPage = "blog/category"
+==
+<section class="banner page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center">Category: {{ category.name }}</h2>
+        </div>
+      </div>
+    </div><!-- /.container -->
+</section><!-- /.banner -->
+<div class="container helper-margin-top-50 helper-margin-bottom-50">
+    <div class="row">
+        <div class="col-md-8">
+            {% partial 'blog/posts' %}
+        </div>
+        <div class="col-md-4">
+            {% partial 'blog/categories' %}
+        </div>
+    </div>
+</div>

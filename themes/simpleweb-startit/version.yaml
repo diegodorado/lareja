@@ -1,0 +1,7 @@
+1.0.0: Theme release.
+1.0.1: Several Bug fixes.
+1.0.2: Theme updated to Bootstrap Version 3.3.7
+1.0.3: Menu now support active item
+1.0.4: Page Preloader added
+1.0.5: Partials renamed to, for example, tm-header.htm for major theme update
+1.0.6: Google Fonts and Scripts moved to a partial for better customization
