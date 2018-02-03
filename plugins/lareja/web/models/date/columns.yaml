@@ -1,0 +1,5 @@
+columns:
+    date:
+        label: Fecha
+        type: date
+        sortable: true

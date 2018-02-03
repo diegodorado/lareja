@@ -1,0 +1,10 @@
+name: Dates
+form: $/lareja/web/models/date/fields.yaml
+modelClass: Lareja\Web\Models\Date
+defaultRedirect: lareja/web/dates
+create:
+    redirect: 'lareja/web/dates/update/:id'
+    redirectClose: lareja/web/dates
+update:
+    redirect: lareja/web/dates
+    redirectClose: lareja/web/dates

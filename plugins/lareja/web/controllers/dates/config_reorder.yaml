@@ -1,0 +1,4 @@
+title: Dates
+modelClass: Lareja\Web\Models\Date
+toolbar:
+    buttons: reorder_toolbar

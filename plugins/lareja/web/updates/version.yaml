@@ -117,3 +117,18 @@
 1.0.40:
     - 'Updated table lareja_web_reservation'
     - builder_table_update_lareja_web_reservation_12.php
+1.0.41:
+    - 'Created table lareja_web_dates'
+    - builder_table_create_lareja_web_dates.php
+1.0.42:
+    - 'Created table lareja_web_'
+    - builder_table_create_lareja_web_.php
+1.0.43:
+    - 'Updated table lareja_web_'
+    - builder_table_update_lareja_web_date_caretaker.php
+1.0.44:
+    - 'Updated table lareja_web_dates'
+    - builder_table_update_lareja_web_date.php
+1.0.45:
+    - 'Updated table lareja_web_date_caretaker'
+    - builder_table_update_lareja_web_date_caretaker_2.php
