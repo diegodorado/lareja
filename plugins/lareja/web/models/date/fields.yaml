@@ -2,5 +2,5 @@ fields:
     date:
         label: Fecha
         span: auto
-        mode: datetime
+        mode: date
         type: datepicker

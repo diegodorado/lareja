@@ -1,0 +1,19 @@
+.date{
+	margin-bottom: 10px;
+}
+input.form-control{
+	margin-bottom: 4px;
+	width: 300px;
+}
+.new_care_taker, .careTaker .edit{
+	margin-bottom: 10px;
+	display: none;
+}
+.careTaker .show .name{
+	font-weight: bold;
+	color: #444;
+}
+.careTaker{
+	margin-bottom: 20px;
+}
+		

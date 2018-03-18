@@ -132,3 +132,18 @@
 1.0.45:
     - 'Updated table lareja_web_date_caretaker'
     - builder_table_update_lareja_web_date_caretaker_2.php
+1.0.46:
+    - 'Created table lareja_web_fecha'
+    - builder_table_create_lareja_web_fecha.php
+1.0.47:
+    - 'Created table lareja_web_caretaker_date'
+    - builder_table_create_lareja_web_caretaker_date.php
+1.0.48:
+    - 'Drop table lareja_web_caretaker_date'
+    - builder_table_delete_lareja_web_caretaker_date.php
+1.0.49:
+    - 'Drop table lareja_web_fecha'
+    - builder_table_delete_lareja_web_fecha.php
+1.0.50:
+    - 'Updated table lareja_web_date'
+    - builder_table_update_lareja_web_date_2.php

@@ -46,7 +46,7 @@ navigation:
                     - reservationManager
             keeper:
                 label: Cuidadores
-                url: lareja/web/keepers
+                url: lareja/web/dates
                 icon: icon-key
             material:
                 label: Materiales

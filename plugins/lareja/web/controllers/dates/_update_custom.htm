@@ -1,0 +1,31 @@
+<div class="date"><?php echo $date->date; ?></div>
+<?php foreach($careTakers as $careTaker) { ?>
+<div class="careTakers">
+	<div class="careTaker">
+		<div class="edit">
+			<div><input type="text" class="form-control" name="name" placeholder="Nombre y apellido" value="<?php echo $careTaker->name; ?>"></div>
+			<div><input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $careTaker->email; ?>"></div>
+			<div><input type="text" class="form-control" name="phone" placeholder="Teléfono" value="<?php echo $careTaker->phone; ?>"></div>
+		</div>
+		<div class="show">
+			<div class="name"><?php echo $careTaker->name; ?></div>
+			<div class="contact_info"><?php echo $careTaker->email . ' / ' .  $careTaker->phone; ?></div>
+		</div>
+		<div class="addButton">
+			<button class="btn btn-primary">Editar</button>
+			<button class="btn btn-danger">Remover</button>
+		</div>
+	</div>
+</div>
+<?php } ?>
+<?php if (count($careTakers) < 2) { ?>
+<div class="new_care_taker">
+	<div><input type="text" class="form-control" name="name" placeholder="Nombre y apellido"></div>
+	<div><input type="text" class="form-control" name="email" placeholder="Email"></div>
+	<div><input type="text" class="form-control" name="phone" placeholder="Teléfono"></div>
+</div>
+<div class="addButton">
+	<button class="btn btn-primary">Agregar Cuidador</button>
+</div>
+<?php } ?>
+

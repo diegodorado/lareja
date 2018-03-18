@@ -2,6 +2,9 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Lareja\Web\Models\Date;
+use Lareja\Web\Models\DateCaretaker;
+use Illuminate\Support\Facades\DB;
 
 class Dates extends Controller
 {
@@ -10,6 +13,7 @@ class Dates extends Controller
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
+    public $data;
 
     public $requiredPermissions = [
         'keeperManager' 
@@ -19,5 +23,19 @@ class Dates extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Lareja.Web', 'backend', 'keeper');
+        $this->addJs("/plugins/lareja/web/assets/scripts/dates.js", "1.0.0");
+        $this->addCss("/plugins/lareja/web/assets/styles/dates.css", "1.0.0");
     }
+
+    public function update($recordId, $context = null)
+	{
+		
+		$date = Date::select('date')->where('id',$recordId)->first();
+		$careTakers = DateCaretaker::select('name','email','phone')
+		->where('date_id', $recordId)
+		->get();
+		$this->data['date'] = $date;
+		$this->data['careTakers'] = $careTakers;
+
+	}
 }

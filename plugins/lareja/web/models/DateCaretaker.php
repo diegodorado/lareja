@@ -18,5 +18,5 @@ class DateCaretaker extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'lareja_web_activity';
+    public $table = 'lareja_web_date_caretaker';
 }

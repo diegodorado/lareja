@@ -10,7 +10,7 @@
     <?= Form::open(['class' => 'layout']) ?>
 
         <div class="layout-row">
-            <?= $this->formRender() ?>
+			<?php echo $this->makePartial('update_custom',$this->data); ?>
         </div>
 
         <div class="form-buttons">
