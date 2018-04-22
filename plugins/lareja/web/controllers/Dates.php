@@ -26,7 +26,7 @@ class Dates extends Controller
         $this->addJs("/plugins/lareja/web/assets/scripts/dates.js", "1.0.0");
         $this->addCss("/plugins/lareja/web/assets/styles/dates.css", "1.0.0");
     }
-
+/*
     public function update($recordId, $context = null)
 	{
 		
@@ -37,5 +37,5 @@ class Dates extends Controller
 		$this->data['date'] = $date;
 		$this->data['careTakers'] = $careTakers;
 
-	}
+	}*/
 }

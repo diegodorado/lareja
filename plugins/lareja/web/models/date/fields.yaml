@@ -4,3 +4,14 @@ fields:
         span: auto
         mode: date
         type: datepicker
+    caretakers:
+        label: Cuidadores
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Nombre
+                    span: auto
+                    type: text
