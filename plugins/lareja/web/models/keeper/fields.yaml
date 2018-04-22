@@ -1,7 +1,0 @@
-fields:
-    state:
-        label: Estado
-        span: auto
-        nameFrom: name
-        descriptionFrom: description
-        type: relation

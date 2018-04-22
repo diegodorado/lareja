@@ -2,7 +2,7 @@
 <?php foreach($careTakers as $careTaker) { ?>
 <div class="careTakers">
 	<div class="careTaker">
-		<div class="edit">
+		<div class="edit-form">
 			<div><input type="text" class="form-control" name="name" placeholder="Nombre y apellido" value="<?php echo $careTaker->name; ?>"></div>
 			<div><input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $careTaker->email; ?>"></div>
 			<div><input type="text" class="form-control" name="phone" placeholder="Teléfono" value="<?php echo $careTaker->phone; ?>"></div>
@@ -11,9 +11,9 @@
 			<div class="name"><?php echo $careTaker->name; ?></div>
 			<div class="contact_info"><?php echo $careTaker->email . ' / ' .  $careTaker->phone; ?></div>
 		</div>
-		<div class="addButton">
-			<button class="btn btn-primary">Editar</button>
-			<button class="btn btn-danger">Remover</button>
+		<div class="buttons">
+			<input type="button" class="btn btn-primary edit" value="Editar">
+			<input type="button" class="btn btn-danger edit" value="Remover">
 		</div>
 	</div>
 </div>
@@ -25,7 +25,7 @@
 	<div><input type="text" class="form-control" name="phone" placeholder="Teléfono"></div>
 </div>
 <div class="addButton">
-	<button class="btn btn-primary">Agregar Cuidador</button>
+	<input type="button" class="btn btn-primary" value="Agregar Cuidador">
 </div>
 <?php } ?>
 

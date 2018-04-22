@@ -1,5 +1,6 @@
 columns:
     date:
         label: Fecha
-        type: date
+        type: text
         sortable: true
+        select: concat(date_format(date,"%d %b, %Y"),"&nbsp;&nbsp;a&nbsp;&nbsp;",date_format(date_add(date,interval 1 day),"%d %b, %Y"))

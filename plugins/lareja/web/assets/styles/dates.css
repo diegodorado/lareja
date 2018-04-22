@@ -5,8 +5,10 @@ input.form-control{
 	margin-bottom: 4px;
 	width: 300px;
 }
-.new_care_taker, .careTaker .edit{
+.new_care_taker{
 	margin-bottom: 10px;
+}
+.careTaker .edit-form{
 	display: none;
 }
 .careTaker .show .name{

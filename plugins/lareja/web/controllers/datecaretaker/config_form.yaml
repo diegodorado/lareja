@@ -1,0 +1,10 @@
+name: DateCaretaker
+form: $/lareja/web/models/datecaretaker/fields.yaml
+modelClass: Lareja\Web\Models\DateCaretaker
+defaultRedirect: lareja/web/datecaretaker
+create:
+    redirect: 'lareja/web/datecaretaker/update/:id'
+    redirectClose: lareja/web/datecaretaker
+update:
+    redirect: lareja/web/datecaretaker
+    redirectClose: lareja/web/datecaretaker
