@@ -6,14 +6,15 @@
 			<div><input type="text" class="form-control" name="name" placeholder="Nombre y apellido" value="<?php echo $careTaker->name; ?>"></div>
 			<div><input type="text" class="form-control" name="email" placeholder="Email" value="<?php echo $careTaker->email; ?>"></div>
 			<div><input type="text" class="form-control" name="phone" placeholder="Teléfono" value="<?php echo $careTaker->phone; ?>"></div>
+			<input type="button" class="btn btn-primary save" value="Guardar">
 		</div>
-		<div class="show">
+		<div class="info">
 			<div class="name"><?php echo $careTaker->name; ?></div>
 			<div class="contact_info"><?php echo $careTaker->email . ' / ' .  $careTaker->phone; ?></div>
-		</div>
-		<div class="buttons">
 			<input type="button" class="btn btn-primary edit" value="Editar">
 			<input type="button" class="btn btn-danger edit" value="Remover">
+		</div>
+		<div class="buttons">
 		</div>
 	</div>
 </div>

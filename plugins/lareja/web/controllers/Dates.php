@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class Dates extends Controller
 {
-    //public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController','Backend.Behaviors.RelationController','Backend\Behaviors\ReorderController'];
     public $implement = ['Backend\Behaviors\ListController','Backend\Behaviors\FormController','Backend\Behaviors\ReorderController'];
 
     public $listConfig = 'config_list.yaml';

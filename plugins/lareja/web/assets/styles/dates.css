@@ -11,7 +11,7 @@ input.form-control{
 .careTaker .edit-form{
 	display: none;
 }
-.careTaker .show .name{
+.careTaker .info .name{
 	font-weight: bold;
 	color: #444;
 }

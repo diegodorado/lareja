@@ -21,7 +21,10 @@ class Date extends Model
      * @var string The database table used by the model.
      */
     public $table = 'lareja_web_date';
+
+
     //public $hasMany = [
-    //  'caretakers' => ['Lareja\Web\Models\DateCaretaker'],
+    //    'caretakers' => ['Lareja\Web\Models\DateCaretaker']
     //];
+
 }
