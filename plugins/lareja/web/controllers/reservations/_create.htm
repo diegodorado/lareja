@@ -65,20 +65,41 @@
 				<label></label>
 				<input type="hidden" name="data[hosts][0][person_id]">
 			</div>
-			<div class="host-field host-date-in">
+			<div class="host-field ">
 				<div class="field-datepicker" data-control="datepicker">
 					<div class="input-with-icon right-align">
 						<i class="icon icon-calendar-o"></i>
 						<input type="text" class="form-control align-right" autocomplete="off" data-datepicker />
 					</div>
+
+					<!-- Data locker -->
+	        <input
+							class="host-date-in"
+	            type="hidden"
+	            name=""
+	            value=""
+	            data-datetime-value
+	            />
+
+
 				</div>
 			</div>
-			<div class="host-field host-date-out">
+			<div class="host-field">
 				<div class="field-datepicker" data-control="datepicker">
 					<div class="input-with-icon right-align">
 						<i class="icon icon-calendar-o"></i>
 						<input type="text" class="form-control align-right" autocomplete="off" data-datepicker />
 					</div>
+					<!-- Data locker -->
+					<input
+							class="host-date-out"
+							type="hidden"
+							name=""
+							value=""
+							data-datetime-value
+							/>
+
+
 				</div>
 			</div>
 			<div class="host-field host-place">

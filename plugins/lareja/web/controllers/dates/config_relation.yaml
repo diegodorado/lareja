@@ -1,0 +1,10 @@
+caretakers:
+    label: Cuidadores
+    view:
+        list: $/lareja/web/models/datecaretaker/columns.yaml
+        toolbarPartial: caretakers_toolbar
+        toolbarButtons: create|delete
+        showSorting: false
+
+    manage:
+        form: $/lareja/web/models/datecaretaker/fields.yaml

@@ -1,0 +1,7 @@
+columns:
+    name:
+        label: Nombre
+        type: text
+    phone:
+        label: Phone
+        type: text

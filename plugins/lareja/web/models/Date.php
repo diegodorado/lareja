@@ -9,6 +9,8 @@ class Date extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+    protected $jsonable = ['caretakers'];
+
     /*
      * Validation
      */
@@ -19,4 +21,7 @@ class Date extends Model
      * @var string The database table used by the model.
      */
     public $table = 'lareja_web_date';
+    //public $hasMany = [
+    //  'caretakers' => ['Lareja\Web\Models\DateCaretaker'],
+    //];
 }

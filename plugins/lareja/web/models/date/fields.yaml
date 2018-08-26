@@ -4,3 +4,29 @@ fields:
         span: auto
         mode: date
         type: datepicker
+    caretakers:
+        label: Cuidadores
+        oc.commentPosition: ''
+        prompt: 'Agregar Cuidador'
+        span: full
+        type: repeater
+        form:
+            fields:
+                'caretakers[name]':
+                    label: Name
+                    oc.commentPosition: ''
+                    span: auto
+                    cssClass: col-lg-4
+                    type: text
+                'caretakers[email]':
+                    label: Email
+                    oc.commentPosition: ''
+                    span: auto
+                    cssClass: col-lg-4
+                    type: text
+                'caretakers[phone]':
+                    label: Phone
+                    oc.commentPosition: ''
+                    span: auto
+                    cssClass: col-lg-4
+                    type: number

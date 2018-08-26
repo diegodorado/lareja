@@ -8,9 +8,8 @@ $(document).ready(function(){
 		$('.hosts-area .host-name label').html($person);
 	});
 	$('.add-button').click(function(){
-		new_host();	
+		new_host();
 	});
-	$('[data-control="datepicker"]').datePicker({ format: 'D/MM/Y' });
 	$('.host-enabled input').change(function(){
 		toggle_enabled($(this).parent().parent());
 	});
@@ -34,8 +33,7 @@ function new_host(){
 	$('.hosts.table .host:last .host-name').html($person_select);
 	$('.hosts.table .host:last .host-place').html($place_select);
 
-	init_selects();
-	init_datePickers();
+	//init_selects();
 
 	$('.hosts.table .host:last .host-place .select2-selection__rendered').attr('title',$place_title).html($place_title);
 	$('.hosts.table .host:last .host-name span').focus();
@@ -44,23 +42,16 @@ function new_host(){
 
 	name_fields();
 
-} 
-
-function init_datePickers(){
-	$('[data-control="datepicker"]').datePicker({ format: 'DD/MM/Y' });
-	/*$('.host-date-in [data-control="datepicker"]').change(function(){
-		$val = $(this).val();
-		$(this).parent().parent().find('.host-date-out [data-control="datepicker"]').datePicker({ minDate: '2017-09-13' });
-	});*/
 }
+
 
 function name_fields(){
 	$counter = 0;
-	$('.hosts.table .host').each(function(){		
+	$('.hosts.table .host').each(function(){
 		$(this).find('.host-name select').attr('name','data[hosts]['+$counter+'][person_id]');
 		$(this).find('.host-name input').attr('name','data[hosts]['+$counter+'][person_id]');
-		$(this).find('.host-date-in input').attr('name','data[hosts]['+$counter+'][from]');
-		$(this).find('.host-date-out input').attr('name','data[hosts]['+$counter+'][to]');
+		$(this).find('.host-date-in').attr('name','data[hosts]['+$counter+'][from]');
+		$(this).find('.host-date-out').attr('name','data[hosts]['+$counter+'][to]');
 		$(this).find('.host-place select').attr('name','data[hosts]['+$counter+'][place_id]');
 		$(this).find('.host-workshop input').attr('name','data[hosts]['+$counter+'][workshop]');
 		$(this).find('.host-enabled input').attr('name','data[hosts]['+$counter+'][enabled]');

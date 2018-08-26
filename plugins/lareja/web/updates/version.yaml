@@ -147,3 +147,6 @@
 1.0.50:
     - 'Updated table lareja_web_date'
     - builder_table_update_lareja_web_date_2.php
+1.0.51:
+    - 'Updated table lareja_web_date'
+    - builder_table_update_lareja_web_date_3.php

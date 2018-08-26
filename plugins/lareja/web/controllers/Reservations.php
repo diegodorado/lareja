@@ -67,19 +67,15 @@ class Reservations extends Controller
 
 		for($i=0;$i<count($data['hosts']);$i++){
 			$data['hosts'][$i]['reservation_id'] = $id;
-			$from_parts = explode('-',$data['hosts'][$i]['from']);
-			$data['hosts'][$i]['from'] = $from_parts[2] . $from_parts[1] .$from_parts[0];
-			$to_parts = explode('-',$data['hosts'][$i]['to']);
-			$data['hosts'][$i]['to'] = $to_parts[2] . $to_parts[1] .$to_parts[0];
 		}
 
 		ReservationHost::insert($data['hosts']);
 
 		Flash::success("Se guardó todo y no hubo ningún error");
-
-        if ($redirect = $this->makeRedirect('create', $model)) {
-            return $redirect;
-        }
+    //todo: proper redirect
+    //if ($redirect = $this->makeRedirect('create', $model)) {
+    //      return $redirect;
+    //  }
 	}
 
     public function update($recordId, $context = null)
@@ -166,10 +162,6 @@ class Reservations extends Controller
 		}
 
 		foreach($reservation_hosts as $host){
-			$from_parts = explode('-',$host->attributes['from']);
-			$host->attributes['from'] = $from_parts[2] .'-'. $from_parts[1] .'-'.$from_parts[0];
-			$to_parts = explode('-',$host->attributes['to']);
-			$host->attributes['to'] = $to_parts[2] .'-'. $to_parts[1] .'-'.$to_parts[0];
 			$this->data['hosts'][] = $host->attributes;
 		}
 

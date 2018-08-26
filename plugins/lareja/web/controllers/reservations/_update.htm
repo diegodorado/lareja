@@ -67,20 +67,36 @@
 					<label><?php echo $host['name'].' '.$host['last_name']; ?></label>
 					<input type="hidden" value="<?php echo $host['person_id']; ?>">
 				</div>
-				<div class="host-field host-date-in">
+				<div class="host-field">
 					<div class="field-datepicker" data-control="datepicker">
 						<div class="input-with-icon right-align">
 							<i class="icon icon-calendar-o"></i>
-							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker value="<?php echo $host['from']; ?>"/>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker />
 						</div>
+						<!-- Data locker -->
+						<input
+								class="host-date-in"
+								type="hidden"
+								name=""
+								value="<?php echo $host['from']; ?>"
+								data-datetime-value
+								/>
 					</div>
 				</div>
 				<div class="host-field host-date-out">
 					<div class="field-datepicker" data-control="datepicker">
 						<div class="input-with-icon right-align">
 							<i class="icon icon-calendar-o"></i>
-							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker value="<?php echo $host['to']; ?>"/>
+							<input type="text" class="form-control align-right" autocomplete="off" data-datepicker/>
 						</div>
+						<!-- Data locker -->
+						<input
+								class="host-date-out"
+								type="hidden"
+								name=""
+								value="<?php echo $host['to']; ?>"
+								data-datetime-value
+								/>
 					</div>
 				</div>
 				<div class="host-field host-place">

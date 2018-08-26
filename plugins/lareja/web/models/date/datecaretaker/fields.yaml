@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    phone:
+        label: Phone
+        oc.commentPosition: ''
+        span: auto
+        type: text
