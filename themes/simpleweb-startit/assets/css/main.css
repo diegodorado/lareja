@@ -15,7 +15,19 @@ h4,
 h5,
 h6 {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
+}
+
+.content img{
+    width: 100%;
 }
 
 #preloader {
@@ -151,10 +163,14 @@ h6 {
     font-size: 16px;
     font-weight: 400;
 }
+.topnav .navbar-nav>li>a {
+    height: 65px;
+    line-height: 35px;
+}
+
+
 a.navbar-brand {
-  font-size: 24px;
-  font-weight: 900;
-  color: #000!important;
+  height: 65px;
 }
 
 .lead {
@@ -271,7 +287,7 @@ a.navbar-brand {
     margin-top: 0;
 }
 .page {
-  margin-top: 50px;
+  margin: 100px 0 90px;
 }
 @media(max-width:1199px) {
     ul.banner-social-buttons {

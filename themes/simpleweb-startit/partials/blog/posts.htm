@@ -1,45 +1,22 @@
+==
 {% set posts = blogPosts.posts %}
 
-<div class="post-list">
+<section class="parque page">
     {% for post in posts %}
-        <div class="media">
-
-            <div class="media-left">
-                <a href="{{ post.url }}">
-                    {% if post.featured_images.count > 0 %}
-                        <img class="media-object" src="{{ post.featured_images.first.getThumb(100, 'auto') }}" />
-                    {% else %}
-                        <img class="media-object" src="http://placehold.it/100x100" />
-                    {% endif %}
-                </a>
-            </div>
-
-            <div class="media-body">
-                <h4 class="media-heading">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
                     <a href="{{ post.url }}">{{ post.title }}</a>
                 </h4>
-                <p class="info">
-                    Posted
-                    {% if post.categories.count %} in {% endif %}
-                    {% for category in post.categories %}
-                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-                    {% endfor %}
-                    on {{ post.published_at|date('M d, Y') }}
-                </p>
-
-                {% if post.excerpt %}
-                    <p class="excerpt">{{ post.excerpt }}</p>
-                {% else %}
-                    <div class="content">{{ post.content_html|raw }}</div>
-                {% endif %}
+                <div class="content">{{ post.content_html|raw }}</div>
             </div>
         </div>
     {% else %}
-        <div class="no-data">
+        <div>
             <p>{{ noPostsMessage }}</p>
         </div>
     {% endfor %}
-</div>
+</section>
 
 {% if posts.lastPage > 1 %}
     <ul class="pagination">
