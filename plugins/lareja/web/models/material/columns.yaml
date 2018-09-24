@@ -12,12 +12,6 @@ columns:
         select: concat(name," ",last_name)
         relation: person
     name:
-        label: Nombre
-        type: text
-        searchable: true
-        sortable: true
-    production:
-        label: 'Es producción'
-        type: text
-        searchable: true
-        sortable: true
+        label: Titulo
+        type: partial
+        path: ~/plugins/lareja/web/models/material/_name_column.htm

@@ -1,0 +1,9 @@
+<?php
+  if($record->production){
+    foreach ($record->production as $p) {
+      if(isset($p['lang']) && ($p['lang']==='es') && isset($p['file'])){
+        echo $p['file'];
+      }
+    }
+  }
+?>

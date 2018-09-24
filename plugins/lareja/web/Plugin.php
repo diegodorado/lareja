@@ -11,4 +11,14 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+    public function pluginDetails()
+    {
+        return [
+            'name'        => 'lareja.web::lang.plugin.name',
+            'description' => 'lareja.web::lang.plugin.description',
+            'author'      => 'Equipo web de la reja',
+            'icon'        => 'icon-user',
+            'homepage'    => 'https://github.com/diegodorado/lareja'
+        ];
+    }
 }

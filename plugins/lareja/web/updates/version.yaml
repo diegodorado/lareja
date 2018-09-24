@@ -150,3 +150,12 @@
 1.0.51:
     - 'Updated table lareja_web_date'
     - builder_table_update_lareja_web_date_3.php
+1.0.52:
+    - 'Updated table lareja_web_material'
+    - builder_table_update_lareja_web_material_7.php
+1.0.53:
+    - 'Updated table lareja_web_material'
+    - builder_table_update_lareja_web_material_8.php
+1.0.54:
+    - 'Updated table lareja_web_material'
+    - builder_table_update_lareja_web_material_9.php

@@ -9,10 +9,12 @@ use Lareja\Web\Models\Person;
 class Material extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
+    protected $jsonable = ['production'];
+    protected $fillable = ['person_id', 'production', 'type'];
 
     /*
      * Validation
@@ -24,15 +26,13 @@ class Material extends Model
      * @var string The database table used by the model.
      */
     public $table = 'lareja_web_material';
-    
+    protected  $primaryKey = 'id';
+
     public $belongsTo = [
-		'person' => 'Lareja\Web\Models\Person'
+		    'person' => 'Lareja\Web\Models\Person'
     ];
-    
-    public $attachOne = [
-		'file' => 'System\Models\File'
-    ];
-    
+
+
     public function getPersonOptions($value, $formData){
 
 		$list = array();
