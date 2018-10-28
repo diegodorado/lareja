@@ -41,7 +41,8 @@ function onStart(){
       <div class="col-lg-8">
 	  	{% for activity in next_activities %}
         <article>
-          <img src="{{ activity.image_path }}" style="width:100%; height:auto;" alt="Estacional">
+					<div style="margin: auto; height:480px; background-image: url({{ activity.image_path }}); background-size: cover; background-position: center;">
+					</div>
           <h3>{{ activity.name }}</h3>
           <i class="fa fa-calendar">{{ activity.date | date('d/m/Y') }}</i>
           <i class="fa fa-link"><a href="www.facebook.com"> Link</a></i>
@@ -56,7 +57,7 @@ function onStart(){
 	  	{% for activity in old_activities %}
         <div class="row">
           <div class="col-lg-4" style="padding: 10px 0;">
-            <img src="{{ activity.image_path }}" style="width:100%; height:auto;" alt="Estacional">
+            <img src="{{ activity.image_path }}" style="max-height:96px;" alt="Estacional">
           </div>
           <div class="col-lg-8">
             <h4>{{ activity.name }}</h4>
