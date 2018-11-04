@@ -1,0 +1,72 @@
+title = "Actividades"
+url = "/actividades"
+layout = "default-layout"
+is_hidden = 0
+==
+<?php 
+use Lareja\Web\Models\Activity;
+function onStart(){
+	$next_activities 	= Activity::where('date', '>', date('Y-m-d H:i:s'))->get();
+	$old_activities 	= Activity::where('date', '<', date('Y-m-d H:i:s'))->get();
+	/*echo '<pre>'; var_dump($activities); echo '</pre>';*/
+	/*exit;*/
+	for($i = 0; $i < count($next_activities); $i++){
+		if (!is_null($next_activities[$i]->picture)){
+			$next_activities[$i]['image_path'] = $next_activities[$i]->picture->getPath();
+		}
+	}
+	for($i = 0; $i < count($old_activities); $i++){
+		if (!is_null($old_activities[$i]->picture)){
+			$old_activities[$i]['image_path'] = $old_activities[$i]->picture->getPath();
+		}
+	}
+	$this['next_activities'] = $next_activities;
+	$this['old_activities'] = $old_activities;
+}
+?>
+==
+<section class="actividades page">
+  <div class="container">
+    <!--Títulos-->
+    <div class="row">
+      <div class="col-lg-8">
+        <h2>Próximas Actividades</h2>
+      </div>
+      <div class="col-lg-4">
+        <h3>Activides Anteriores</h3>
+      </div>
+    </div>
+    <div class="row">
+      <!--principal-->
+      <div class="col-lg-8">
+	  	{% for activity in next_activities %}
+        <article>
+					<div style="margin: auto; height:480px; background-image: url({{ activity.image_path }}); background-size: cover; background-position: center;">
+					</div>
+          <h3>{{ activity.name }}</h3>
+          <i class="fa fa-calendar">{{ activity.date | date('d/m/Y') }}</i>
+          <i class="fa fa-link"><a href="www.facebook.com"> Link</a></i>
+          <p>{{ activity.description }}</p>
+          <hr>
+        </article>
+		{% endfor %}
+      </div>
+      <!--listado-->
+      <div class="col-lg-4">
+        <!--item de listado-->
+	  	{% for activity in old_activities %}
+        <div class="row">
+          <div class="col-lg-4" style="padding: 10px 0;">
+            <img src="{{ activity.image_path }}" style="max-height:96px;" alt="Estacional">
+          </div>
+          <div class="col-lg-8">
+            <h4>{{ activity.name }}</h4>
+            <i class="fa fa-calendar" style="font-size: 14px;">{{ activity.date | date('d/m/Y') }}</i><br>
+            <i class="fa fa-link"><a href="www.facebook.com" style="font-size: 14px;"> Link</a></i>
+          </div>
+        </div>
+		{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
