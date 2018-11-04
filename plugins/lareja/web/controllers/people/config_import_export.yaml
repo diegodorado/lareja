@@ -1,0 +1,17 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import People
+    modelClass: Lareja\Web\Models\PersonImport
+    list: $/lareja/web/models/person/columns.yaml
+    redirect: lareja/web/people
+
+export:
+    useList: export
+    fileName: people.csv
+    title: Export People
+    modelClass: Lareja\Web\Models\PersonExport
+    list: $/lareja/web/models/person/columns.yaml
+    redirect: lareja/web/people

@@ -1,0 +1,17 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import Materials
+    modelClass: Lareja\Web\Models\MaterialImport
+    list: $/lareja/web/models/material/csv_columns.yaml
+    redirect: lareja/web/materials
+
+export:
+    useList: export
+    fileName: materials.csv
+    title: Export Materials
+    modelClass: Lareja\Web\Models\MaterialExport
+    list: $/lareja/web/models/material/csv_columns.yaml
+    redirect: lareja/web/materials

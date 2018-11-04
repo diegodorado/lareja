@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: id
+        type: number
+    person_id:
+        label: person_id
+        type: number
+    person:
+        label: person
+        type: text
+        select: concat(name," ",last_name)
+        relation: person
+    type:
+        label: type
+        type: text
+    name:
+        label: name
+        type: partial
+        path: ~/plugins/lareja/web/models/material/_csv_name_column.htm
+    file:
+        label: file
+        type: partial
+        path: ~/plugins/lareja/web/models/material/_csv_file_column.htm

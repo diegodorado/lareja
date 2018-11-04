@@ -4,7 +4,7 @@
       'description' => ''
   ],
   'data' => [
-      'import' => 'Import',
-      'export' => 'Export'
+      'import' => 'Importar',
+      'export' => 'Exportar'
   ]
 ];

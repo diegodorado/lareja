@@ -1,0 +1,11 @@
+title: Materiales
+modelClass: Lareja\Web\Models\Material
+list: $/lareja/web/models/material/csv_columns.yaml
+recordUrl: 'lareja/web/materials/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

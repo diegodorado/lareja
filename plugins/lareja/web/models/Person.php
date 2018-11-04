@@ -12,6 +12,7 @@ class Person extends Model
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
+    protected $fillable = ['name', 'last_name', 'email', 'phone', 'is_master'];
 
     /*
      * Validation
@@ -25,4 +26,6 @@ class Person extends Model
      * @var string The database table used by the model.
      */
     public $table = 'lareja_web_person';
+    protected  $primaryKey = 'id';
+
 }
