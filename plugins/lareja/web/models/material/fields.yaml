@@ -13,6 +13,7 @@ fields:
             m: Monografía
             r: 'Relato de Experiencia'
             o: 'Otros Aportes'
+            e: 'Estudio de Campo'
         span: auto
         type: dropdown
     production:

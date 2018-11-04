@@ -10,6 +10,9 @@ columns:
         type: text
         select: concat(name," ",last_name)
         relation: person
+    type:
+        label: type
+        type: text
     name:
         label: name
         type: partial

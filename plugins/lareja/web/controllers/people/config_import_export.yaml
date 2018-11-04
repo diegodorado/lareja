@@ -9,7 +9,8 @@ import:
     redirect: lareja/web/people
 
 export:
-    useList: true
+    useList: export
+    fileName: people.csv
     title: Export People
     modelClass: Lareja\Web\Models\PersonExport
     list: $/lareja/web/models/person/columns.yaml

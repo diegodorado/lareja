@@ -4,6 +4,11 @@ columns:
         type: number
         searchable: true
         sortable: true
+    type:
+        label: Tipo
+        type: text
+        searchable: true
+        sortable: true
     person:
         label: Autor
         type: text
